@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BrainwaysTech LLP | Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS & Font Awesome -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="icon" href="assets/images/favicon.png">
+
+  <style>
+    body {
+      padding-top: 70px;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .transparent-navbar {
+      background-color: rgba(0, 0, 0, 0.6);
+      color: white;
+    }
+
+    .hero-video {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .hero-video video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .video-content {
+      position: relative;
+      z-index: 2;
+      color: white;
+      padding: 20px;
+      max-width: 90%;
+    }
+
+    .video-content h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      color: black;
+    }
+
+    .video-content p {
+      font-size: 1.2rem;
+      color: #fff;
+    }
+
+    .section-heading {
+      color: black;
+    }
+
+    .service-icon {
+      font-size: 40px;
+      color: orangered;
+      margin-bottom: 15px;
+    }
+
+    .stats {
+      background-color: #f8f9fa;
+      padding: 50px 0;
+      
+    }
+
+    .stat-box {
+      padding: 20px;
+      background:lightsalmon;
+      border-radius: 10px;
+      border-color: #d03801;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    footer {
+      background-color: rgba(0, 0, 0, 0.7);
+      color: #eee;
+      padding: 30px 0;
+      text-align: center;
+    }
+
+    footer .social i {
+      margin: 0 10px;
+      font-size: 20px;
+      color: #ccc;
+      transition: 0.3s;
+    }
+
+    footer .social i:hover {
+      color: #ffc107;
+    }
+
+    .btn-orange {
+      background-color: orangered;
+      color: white;
+    }
+
+    .btn-orange:hover {
+      background-color: #d03801;
+    }
+    .btn-whatsapp {
+        background-color: #25D366;
+        color: white;
+    }
+    .btn-whatsapp:hover {
+        background-color: #1da851;
+        color: white;
+    }
+    .text-orange {
+         color: black;
+    }
+    .work-process-section {
+  background-color: #fefaf3;
+  padding: 60px 20px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.section-subtitle {
+  color: #000;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+
+.section-title span {
+  color: #f6a300;
+}
+
+.process-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.process-step {
+  background: #fff;
+  border-radius: 10px;
+  padding: 30px 25px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  max-width: 450px;
+  flex: 1 1 300px;
+  text-align: left;
+  position: relative;
+}
+
+.step-number {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #f6a300;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.step-icon {
+  height: 40px;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.process-step h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.process-step p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
+
+
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top transparent-navbar">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <img src="assets/images/Brainwaystech LLP Logo.png" width="60" height="60" class="mr-2" alt="Logo">
+      BrainwaysTech LLP
+    </a>
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+        <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero-video">
+  <video autoplay muted loop playsinline>
+    <source src="assets/videos/home.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="video-content">
+    <h1>Welcome to BrainwaysTech LLP</h1>
+    <p>Leading IT & Digital Solutions Partner for Businesses Worldwide</p>
+    <a href="contact.html" class="btn btn-orange mt-3">Get Started</a>
+  </div>
+</section>
+
+<!-- Services Preview -->
+<section class="py-5 text-center">
+  <div class="container">
+    <h2 class="section-heading mb-4">What We Offer</h2>
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="stat-box">
+          <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+          <h5>Digital Marketing</h5>
+          <p>Grow your audience and drive conversions through SEO, Ads & more.</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="stat-box">
+          <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+          <h5>Web Development</h5>
+          <p>We build fast, secure and responsive websites tailored to your needs.</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="stat-box">
+          <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+          <h5>App Development</h5>
+          <p>Launch feature-rich mobile applications that scale with your business.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Preview -->
+<section class="py-5 bg-light text-center">
+  <div class="container">
+    <h2 class="section-heading mb-4">About BrainwaysTech LLP</h2>
+    <p class="mb-4">We are a leading IT solutions provider based in Bangalore, India. With a team of 180+ professionals, we specialize in delivering web, mobile, and digital marketing services that help businesses succeed in the digital era.</p>
+    <a href="about.html" class="btn btn-orange">Learn More</a>
+  </div>
+</section>
+
+<!-- Work Process Section -->
+<section class="work-process-section">
+  <div class="container">
+    <h5 class="section-subtitle">Work Process</h5>
+    <h2 class="section-title">4 Steps to <span>Project Development</span></h2>
+
+    <div class="process-row">
+      <div class="process-step">
+        <div class="step-number">1</div><br>
+        <h3>Planning and Requirement Analysis</h3>
+        <p>We gather detailed requirements, define the project scope, conduct feasibility studies, and align all stakeholders to ensure a clear and unified vision.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-number">2</div><br>
+        <h3>Design and Prototyping</h3>
+        <p>Design robust architecture, develop interactive prototypes, and collect feedback to make refinements and ensure optimal performance.</p>
+      </div>
+    </div>
+
+    <div class="process-row">
+      <div class="process-step">
+        <div class="step-number">3</div><br>
+        <h3>Development and Testing</h3>
+        <p>Implement with iterative coding, conduct testing, and provide progress updates for optimal functionality and smooth development.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-number">4</div><br>
+        <h3>Deployment and Support</h3>
+        <p>Thoroughly test, fix bugs, deploy to production, and provide post-deployment support and continuous improvement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats -->
+<section class="stats text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 mb-4">
+        <div class="stat-box">
+          <h2 class="text-orange">300+</h2>
+          <p>Projects Delivered</p>
+        </div>
+      </div>
+      <div class="col-md-3 mb-4">
+        <div class="stat-box">
+          <h2 class="text-orange">50+</h2>
+          <p>Team Members</p>
+        </div>
+      </div>
+      <div class="col-md-3 mb-4">
+        <div class="stat-box">
+          <h2 class="text-orange">4+</h2>
+          <p>Years of Experience</p>
+        </div>
+      </div>
+      <div class="col-md-3 mb-4">
+        <div class="stat-box">
+          <h2 class="text-orange">98%</h2>
+          <p>Client Satisfaction</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="bg-light py-5" id="contact">
+  <div class="container">
+    <h2 class="text-center text-orange mb-4">Contact Us</h2>
+    <form onsubmit="return sendToWhatsApp();">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label>Name</label>
+          <input type="text" id="name" class="form-control" required>
+        </div>
+        <div class="form-group col-md-6">
+          <label>Email</label>
+          <input type="email" id="email" class="form-control" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Service Interested In</label>
+        <select id="service" class="form-control" required>
+          <option value="">-- Select a Service --</option>
+          <option>SEO</option>
+          <option>Social Media Marketing</option>
+          <option>Meta Ads</option>
+          <option>Google Ads</option>
+          <option>Website Development</option>
+          <option>Content Marketing</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Your Message</label>
+        <textarea id="message" rows="4" class="form-control" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-whatsapp btn-block btn-lg">
+        Send via WhatsApp <i class="fab fa-whatsapp ml-1"></i>
+      </button>
+    </form>
+  </div>
+</section>
+
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <p>BrainwaysTech LLP | Digital & IT Solutions</p>
+    <p>Email: info@brainwaystechllp.com | Phone: +91-7667924881</p>
+    <div class="social mb-2">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <hr style="background-color: rgba(255,255,255,0.2);">
+    <p class="mb-0 small">&copy; 2025 BrainwaysTech LLP. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+<!-- WhatsApp Form Script -->
+<script>
+  function sendToWhatsApp() {
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const service = document.getElementById("service").value;
+    const message = document.getElementById("message").value.trim();
+
+    const number = "917667924881"; // Replace with your WhatsApp number
+    const msg = `New Inquiry from BrainwaysTech Website\n\n*Name:* ${name}\n*Email:* ${email}\n*Service:* ${service}\n*Message:* ${message}`;
+    window.open(`https://wa.me/${number}?text=${encodeURIComponent(msg)}`, '_blank');
+    return false;
+  }
+</script>
+
+</body>
+</html>
