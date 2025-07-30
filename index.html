@@ -194,8 +194,81 @@
 
 .process-step p {
   font-size: 14px;
-  color: #555;
+  color: #0a0a0a;
   line-height: 1.6;
+}
+.power-section {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(8px);
+  padding: 60px 20px;
+  border-radius: 10px;
+  color: #000000;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.power-section h2 {
+  font-size: 2.2em;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.power-section .highlight {
+  color: #fb7d23;
+}
+
+.power-section .subtitle {
+  color: orangered;
+  font-size: 1em;
+  margin-bottom: 40px;
+}
+
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.power-card {
+  background: rgb(237, 236, 236);
+  border-radius: 12px;
+  padding: 20px;
+  flex: 1 1 calc(50% - 10px);
+  min-height: 160px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.power-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(248, 155, 41, 0.2);
+}
+
+.card-content {
+  text-align: left;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.card-header h3 {
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.card-header img {
+  width: 40px;
+  height: 40px;
+}
+
+.power-card p {
+  font-size: 0.95em;
+  color: black;
+  line-height: 1.6em;
 }
 
 
@@ -305,6 +378,55 @@
         <div class="step-number">4</div><br>
         <h3>Deployment and Support</h3>
         <p>Thoroughly test, fix bugs, deploy to production, and provide post-deployment support and continuous improvement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="power-section">
+  <div class="container">
+    <h2>The fire that fuels our <span class="highlight">passion</span></h2>
+    <p class="subtitle">At Brainwaystech LLP, we believe in the power of:</p>
+
+    <div class="card-grid">
+      <div class="power-card">
+        <div class="card-content">
+          <div class="card-header">
+            <h3>Creativity</h3>
+            <img src="assets/images/creativity.png" alt="Creativity Icon">
+          </div>
+          <p>We dare to dream big and push boundaries, never settling for the ordinary.</p>
+        </div>
+      </div>
+
+      <div class="power-card">
+        <div class="card-content">
+          <div class="card-header">
+            <h3>Collaboration</h3>
+            <img src="icon2.png" alt="Collaboration Icon">
+          </div>
+          <p>We thrive on diverse perspectives and believe in the magic of working together.</p>
+        </div>
+      </div>
+
+      <div class="power-card">
+        <div class="card-content">
+          <div class="card-header">
+            <h3>Impact</h3>
+            <img src="icon3.png" alt="Impact Icon">
+          </div>
+          <p>We’re driven by a desire to make a difference, to create brands that move mountains.</p>
+        </div>
+      </div>
+
+      <div class="power-card">
+        <div class="card-content">
+          <div class="card-header">
+            <h3>Innovation</h3>
+            <img src="icon4.png" alt="Innovation Icon">
+          </div>
+          <p>We stay ahead of the curve, embracing new technologies & trends to keep your brand on top.</p>
+        </div>
       </div>
     </div>
   </div>
