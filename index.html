@@ -1,541 +1,1374 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>BrainwaysTech LLP | Home</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Bootstrap CSS & Font Awesome -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="icon" href="assets/images/favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrainwaysTech LLP - Empowering Your Digital Presence</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <style>
-    body {
-      padding-top: 70px;
-      font-family: 'Segoe UI', sans-serif;
-    }
+        :root {
+            --primary-orange: #FF9800;
+            --dark-bg: #1a1a1a;
+            --darker-bg: #0f0f0f;
+            --card-bg: rgba(60, 60, 60, 0.6);
+            --text-white: #ffffff;
+            --text-gray: #b0b0b0;
+            --gold: #d4a574;
+        }
 
-    .transparent-navbar {
-      background-color: rgba(0, 0, 0, 0.6);
-      color: white;
-    }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--dark-bg);
+            color: var(--text-white);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
 
-    .hero-video {
-      position: relative;
-      height: 100vh;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
+        /* Header/Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
 
-    .hero-video video {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      min-width: 100%;
-      min-height: 100%;
-      transform: translate(-50%, -50%);
-      object-fit: cover;
-      z-index: -1;
-    }
+        header.scrolled {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
 
-    .video-content {
-      position: relative;
-      z-index: 2;
-      color: white;
-      padding: 20px;
-      max-width: 90%;
-    }
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    .video-content h1 {
-      font-size: 3rem;
-      font-weight: bold;
-      color: black;
-    }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            text-decoration: none;
+        }
 
-    .video-content p {
-      font-size: 1.2rem;
-      color: #fff;
-    }
+        .logo-icon {
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, #FF6B00, #FF9800);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 2rem;
+            color: white;
+        }
 
-    .section-heading {
-      color: black;
-    }
+        .logo-text-container {
+            display: flex;
+            flex-direction: column;
+        }
 
-    .service-icon {
-      font-size: 40px;
-      color: orangered;
-      margin-bottom: 15px;
-    }
+        .logo-text {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-white);
+            letter-spacing: 1.5px;
+            
+        }
 
-    .stats {
-      background-color: #f8f9fa;
-      padding: 50px 0;
-      
-    }
+        .logo-subtitle {
+            font-size: 0.65rem;
+            color: var(--text-gray);
+            font-weight: 400;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
 
-    .stat-box {
-      padding: 20px;
-      background:lightsalmon;
-      border-radius: 10px;
-      border-color: #d03801;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
+        nav {
+            display: flex;
+            align-items: center;
+        }
 
-    footer {
-      background-color: rgba(0, 0, 0, 0.7);
-      color: #eee;
-      padding: 30px 0;
-      text-align: center;
-    }
+        nav ul {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
 
-    footer .social i {
-      margin: 0 10px;
-      font-size: 20px;
-      color: #ccc;
-      transition: 0.3s;
-    }
+        nav a {
+            color: var(--text-white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.3s;
+            position: relative;
+        }
 
-    footer .social i:hover {
-      color: #ffc107;
-    }
+        nav a:hover {
+            color: var(--primary-orange);
+        }
 
-    .btn-orange {
-      background-color: orangered;
-      color: white;
-    }
+        .cta-nav {
+            background: var(--primary-orange);
+            color: white !important;
+            padding: 0.7rem 1.8rem;
+            border-radius: 8px;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
 
-    .btn-orange:hover {
-      background-color: #d03801;
-    }
-    .btn-whatsapp {
-        background-color: #25D366;
-        color: white;
-    }
-    .btn-whatsapp:hover {
-        background-color: #1da851;
-        color: white;
-    }
-    .text-orange {
-         color: black;
-    }
-    .work-process-section {
-  background-color: #fefaf3;
-  padding: 60px 20px;
-  text-align: center;
-  font-family: 'Poppins', sans-serif;
-}
+        .cta-nav:hover {
+            background: #f57c00;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 152, 0, 0.4);
+        }
 
-.section-subtitle {
-  color: #000;
-  font-size: 14px;
-  margin-bottom: 10px;
-}
+        /* Mobile Menu Button */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 5px;
+        }
 
-.section-title {
-  font-size: 32px;
-  font-weight: 600;
-  margin-bottom: 40px;
-}
+        .menu-toggle span {
+            width: 28px;
+            height: 3px;
+            background: var(--text-white);
+            border-radius: 3px;
+            transition: all 0.3s;
+        }
 
-.section-title span {
-  color: #f6a300;
-}
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
 
-.process-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  margin-bottom: 30px;
-}
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
 
-.process-step {
-  background: #fff;
-  border-radius: 10px;
-  padding: 30px 25px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  max-width: 450px;
-  flex: 1 1 300px;
-  text-align: left;
-  position: relative;
-}
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
 
-.step-number {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  background-color: #f6a300;
-  color: #fff;
-  font-size: 18px;
-  font-weight: bold;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
-}
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 5% 4rem;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%231a1a1a"/><circle cx="600" cy="400" r="300" fill="%23FF9800" opacity="0.05"/></svg>');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
 
-.step-icon {
-  height: 40px;
-  margin-bottom: 20px;
-  display: block;
-}
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 70% 30%, rgba(255, 152, 0, 0.1) 0%, transparent 50%);
+            animation: pulse 8s ease-in-out infinite;
+        }
 
-.process-step h3 {
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
 
-.process-step p {
-  font-size: 14px;
-  color: #0a0a0a;
-  line-height: 1.6;
-}
-.power-section {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(8px);
-  padding: 60px 20px;
-  border-radius: 10px;
-  color: #000000;
-  text-align: center;
-  font-family: 'Poppins', sans-serif;
-}
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
 
-.power-section h2 {
-  font-size: 2.2em;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
+        .hero-welcome {
+            font-size: 1.3rem;
+            color: var(--text-gray);
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
 
-.power-section .highlight {
-  color: #fb7d23;
-}
+        .hero-brand {
+            color: var(--primary-orange);
+            font-weight: 700;
+        }
 
-.power-section .subtitle {
-  color: orangered;
-  font-size: 1em;
-  margin-bottom: 40px;
-}
+        .hero-content h1 {
+            font-size: 5rem;
+            line-height: 1.2;
+            margin-bottom: 2rem;
+            color: var(--text-white);
+            font-weight: 700;
+            text-transform: capitalize;
+        }
 
-.card-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 20px;
-}
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-gray);
+            margin-bottom: 3rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
 
-.power-card {
-  background: rgb(237, 236, 236);
-  border-radius: 12px;
-  padding: 20px;
-  flex: 1 1 calc(50% - 10px);
-  min-height: 160px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+        .hero-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-.power-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(248, 155, 41, 0.2);
-}
+        .hero-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 152, 0, 0.2);
+            transition: all 0.3s;
+        }
 
-.card-content {
-  text-align: left;
-}
+        .hero-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-orange);
+            box-shadow: 0 10px 30px rgba(255, 152, 0, 0.2);
+        }
 
-.card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-}
+        .hero-card-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 152, 0, 0.15);
+            border: 2px solid var(--primary-orange);
+            border-radius: 12px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+        }
 
-.card-header h3 {
-  font-size: 1.2em;
-  font-weight: 600;
-}
+        .hero-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-white);
+        }
 
-.card-header img {
-  width: 40px;
-  height: 40px;
-}
+        /* About Section */
+        .about {
+            padding: 6rem 5%;
+            background: var(--darker-bg);
+        }
 
-.power-card p {
-  font-size: 0.95em;
-  color: black;
-  line-height: 1.6em;
-}
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
 
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
 
-  </style>
+        .section-subtitle {
+            font-size: 1rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            color: var(--text-white);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .passion-section {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            padding: 4rem;
+            border-radius: 15px;
+            margin-bottom: 4rem;
+        }
+
+        .passion-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 3rem;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .value-card {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2rem;
+            border-radius: 12px;
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .value-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-orange);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            flex-shrink: 0;
+        }
+
+        .value-content h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-white);
+        }
+
+        .value-content p {
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 4rem 5%;
+            background: var(--dark-bg);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .stat-card {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--primary-orange);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-gray);
+            font-size: 1rem;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 6rem 5%;
+            background: var(--darker-bg);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 152, 0, 0.2);
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-orange);
+            box-shadow: 0 10px 30px rgba(255, 152, 0, 0.2);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 152, 0, 0.15);
+            border: 2px solid var(--primary-orange);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .service-card:hover .service-icon {
+            background: var(--primary-orange);
+            transform: scale(1.05);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-white);
+        }
+
+        .service-card p {
+            color: var(--text-gray);
+            line-height: 1.8;
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: 6rem 5%;
+            background: var(--dark-bg);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s;
+            border: 1px solid rgba(255, 152, 0, 0.2);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            border-color: var(--primary-orange);
+        }
+
+        .project-image {
+            height: 250px;
+            background: linear-gradient(135deg, #FF6B00 0%, #FF9800 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-white);
+        }
+
+        .project-content p {
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            padding: 0.4rem 1rem;
+            background: rgba(255, 152, 0, 0.2);
+            border: 1px solid var(--primary-orange);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--primary-orange);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 6rem 5%;
+            background: var(--darker-bg);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 152, 0, 0.2);
+            position: relative;
+        }
+
+        .testimonial-quote {
+            font-size: 3rem;
+            color: var(--primary-orange);
+            opacity: 0.3;
+            position: absolute;
+            top: 1rem;
+            left: 2rem;
+        }
+
+        .testimonial-text {
+            color: var(--text-gray);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-orange);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .author-info h5 {
+            color: var(--text-white);
+            margin-bottom: 0.2rem;
+        }
+
+        .author-info p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 6rem 5%;
+            background: var(--dark-bg);
+        }
+
+        .contact-container {
+            max-width: 1000px;
+            margin: 3rem auto 0;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 3rem;
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            padding: 3rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 152, 0, 0.2);
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-white);
+        }
+
+        .contact-info p {
+            color: var(--text-gray);
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-item .icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 152, 0, 0.2);
+            border: 1px solid var(--primary-orange);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .contact-item-text h4 {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-item-text p {
+            font-size: 1rem;
+            color: var(--text-white);
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .contact-form {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2.5rem;
+            border-radius: 12px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-white);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.9rem;
+            border: 1px solid rgba(255, 152, 0, 0.3);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s;
+            background: rgba(0, 0, 0, 0.3);
+            color: var(--text-white);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-orange);
+            box-shadow: 0 0 0 3px rgba(255, 152, 0, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: var(--primary-orange);
+            color: white;
+        }
+
+        .btn:hover {
+            background: #f57c00;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 152, 0, 0.4);
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--darker-bg);
+            color: var(--text-white);
+            padding: 4rem 5% 2rem;
+            border-top: 1px solid rgba(255, 152, 0, 0.2);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-about h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-orange);
+        }
+
+        .footer-about p {
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 152, 0, 0.2);
+            border: 1px solid var(--primary-orange);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-orange);
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 1.3rem;
+        }
+
+        .social-links a:hover {
+            background: var(--primary-orange);
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        .footer-links h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-white);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--text-gray);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-orange);
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 152, 0, 0.2);
+            text-align: center;
+            color: var(--text-gray);
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content h1 {
+                font-size: 3.5rem;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1.5rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
+    <header id="header">
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-icon">B</div>
+                <div class="logo-text-container">
+                    <div class="logo-text">BRAINWAYSTECH LLP</div>
+                    <div class="logo-subtitle">UNLOCKING FUTURES WITH AI</div>
+                </div>
+            </div>
+            <nav>
+                <div class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul id="navMenu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact" class="cta-nav">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top transparent-navbar">
-  <div class="container">
-    <a class="navbar-brand d-flex align-items-center" href="index.html">
-      <img src="assets/images/Brainwaystech LLP Logo.png" width="60" height="60" class="mr-2" alt="Logo">
-      BrainwaysTech LLP
-    </a>
-    <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarContent">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarContent">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-        <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-        <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
-        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-      </ul>
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <p class="hero-welcome">Welcome to <span class="hero-brand">Brainwaystech LLP</span></p>
+                <h1>Empowering Your Digital Presence</h1>
+                <p class="hero-subtitle">Brainwaystech LLP is your one-stop destination for innovative digital solutions. With our expertise and dedication, we offer a range of services designed to elevate your online presence and drive success.</p>
+            </div>
+            <div class="hero-cards">
+                
+                  <a href="https://www.brainwaystechllp.com/web-development" class="hero-card" style="text-decoration: none; color: inherit;">
+                    <div class="hero-card-icon">💻</div>
+                    <h3>Web Development</h3>
+                    </a>
+                
+                
+                  <a href="https://www.brainwaystechllp.com/web-development" class="hero-card" style="text-decoration: none; color: inherit;">
+                    <div class="hero-card-icon">📱</div>
+                    <h3>Mobile App Development</h3>
+                    </a>
+                
+                
+                  <a href="https://www.brainwaystechllp.com/web-development" class="hero-card" style="text-decoration: none; color: inherit;">
+                    <div class="hero-card-icon">🚀</div>
+                    <h3>Digital Marketing Services</h3>
+                    </a>
+                
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <div class="passion-section">
+                <h2 class="passion-title">The fire that fuels our passion</h2>
+                <p style="text-align: center; color: var(--text-gray); margin-bottom: 3rem;">At Brainways Tech, we believe in the power of:</p>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-icon">💡</div>
+                        <div class="value-content">
+                            <h4>Creativity</h4>
+                            <p>We dare to dream big and push boundaries, never settling for the ordinary.</p>
+                        </div>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">🤝</div>
+                        <div class="value-content">
+                            <h4>Collaboration</h4>
+                            <p>We thrive on diverse perspectives and believe in the magic of working together.</p>
+                        </div>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">⚡</div>
+                        <div class="value-content">
+                            <h4>Impact</h4>
+                            <p>We're driven by a desire to make a difference, to create brands that move mountains.</p>
+                        </div>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">🚀</div>
+                        <div class="value-content">
+                            <h4>Innovation</h4>
+                            <p>We stay ahead of the curve, embracing new technologies & trends to keep your brand on top.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <span class="stat-number">2+</span>
+                <span class="stat-label">Years of Experience</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">20+</span>
+                <span class="stat-label">Expert Team</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">50+</span>
+                <span class="stat-label">Happy Clients</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">90+</span>
+                <span class="stat-label">Projects Completed</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-subtitle">— Our Services</p>
+                <h2 class="section-title">What We Offer</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">💻</div>
+                    <h3>Web Development</h3>
+                    <p>Custom websites and web applications built with cutting-edge technologies to deliver exceptional user experiences and drive business growth.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📱</div>
+                    <h3>Mobile App Development</h3>
+                    <p>Native and cross-platform mobile applications for iOS and Android that engage users and deliver seamless functionality.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>Data Analytics</h3>
+                    <p>Transform raw data into powerful insights that drive smarter decisions, optimize performance, and accelerate business growth.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <h3>UI/UX Design</h3>
+                    <p>Beautiful, intuitive designs that captivate users and create memorable digital experiences for your brand.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">☁️</div>
+                    <h3>Cloud Solutions</h3>
+                    <p>Scalable cloud infrastructure and migration services to ensure your applications are reliable, secure, and performant.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📣</div>
+                    <h3>Digital Marketing</h3>
+                    <p>Strategic digital marketing campaigns that boost your online visibility, drive traffic, and convert leads into customers.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎮</div>
+                    <h3>Game Development</h3>
+                    <p>Immersive, high-performance games built to engage players, enhance brand experiences, and drive revenue through creativity and innovation.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎬</div>
+                    <h3>Socialmedia Video Editing</h3>
+                    <p>Engaging, high-impact videos crafted to capture attention, boost engagement, and amplify your brand presence across all social platforms.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚙️</div>
+                    <h3>Enterprise Resource Planning</h3>
+                    <p>Scalable, integrated ERP solutions that streamline operations, enhance productivity, and empower data-driven decision-making across your entire organization.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-subtitle">— Portfolio</p>
+                <h2 class="section-title">Featured Projects</h2>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">🏢</div>
+                    <div class="project-content">
+                        <h3>Enterprise Resource Planning</h3>
+                        <p>Comprehensive ERP solution with inventory management, finance tracking, and real-time analytics for manufacturing excellence in Oodo.</p>
+                        
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">🤖</div>
+                    <div class="project-content">
+                        <h3>AI Chatbot Platform</h3>
+                        <p>Intelligent conversational AI platform with natural language processing and multi-channel support capabilities.</p>
+                        
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">🛒</div>
+                    <div class="project-content">
+                        <h3>E-Commerce Website</h3>
+                        <p>Full-featured online marketplace with payment integration, inventory management, and vendor dashboard.</p>
+                        
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">📱</div>
+                    <div class="project-content">
+                        <h3>Healthcare Mobile App</h3>
+                        <p>Patient management application with appointment scheduling, telemedicine, and health records management.</p>
+                        
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">📊</div>
+                    <div class="project-content">
+                        <h3>Industrial Dashboard</h3>
+                        <p>Real-time insights, clear visualizations, and automated reports have improved our decision-making and efficiency across departments.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">🎯</div>
+                    <div class="project-content">
+                        <h3>Digital Marketing Service</h3>
+                        <p>Data-driven marketing campaigns that enhance online visibility, increase engagement, and generate qualified leads for your business.</p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-subtitle">— Testimonials</p>
+                <h2 class="section-title">What They Say About Us</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">BrainwaysTech LLP's solutions and cutting-edge service revolutionized our digital operations. Their dedicated team exceeded expectations. Highly recommended!</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">👤</div>
+                        <div class="author-info">
+                            <h5>John Anderson</h5>
+                            <p>CEO, Tech Innovations Inc.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">The AI solutions from BrainwaysTech have revolutionized our operations. Their innovation is truly invaluable. A truly strategic partner!</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">👤</div>
+                        <div class="author-info">
+                            <h5>Sarah Mitchell</h5>
+                            <p>CTO, Digital Solutions Ltd.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">BrainwaysTech LLP's agile development team delivered a premium product within our tight deadlines and budget. Fantastic experience overall!</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">👤</div>
+                        <div class="author-info">
+                            <h5>Michael Chen</h5>
+                            <p>Product Manager, StartUp Labs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-subtitle">— Contact</p>
+                <h2 class="section-title">Let's Work Together</h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <p>Have a project in mind? We'd love to hear from you. Let's discuss how we can help bring your vision to life with innovative digital solutions.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="icon">📧</div>
+                            <div class="contact-item-text">
+                                <h4>Email</h4>
+                                <p>info@brainwaystechllp.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="icon">📱</div>
+                            <div class="contact-item-text">
+                                <h4>Phone</h4>
+                                <p>+91 7667924881</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="icon">📍</div>
+                            <div class="contact-item-text">
+                                <h4>Location</h4>
+                                <p>Krishnagiri, Tamilnadu, India - 635001</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm" method="post" action="https://formspree.io/f/movpenyw">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" required placeholder="Enter your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" required placeholder="Enter your email">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" required placeholder="Tell us about your project"></textarea>
+                        </div>
+                        <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="whatsapp-btn" onclick="window.open('https://wa.me/917667924881', '_blank')">
+        💬
     </div>
-  </div>
-</nav>
 
-<!-- Hero Section -->
-<section class="hero-video">
-  <video autoplay muted loop playsinline>
-    <source src="assets/videos/home.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  <div class="video-content">
-    <h1>Welcome to BrainwaysTech LLP</h1>
-    <p>Leading IT & Digital Solutions Partner for Businesses Worldwide</p>
-    <a href="contact.html" class="btn btn-orange mt-3">Get Started</a>
-  </div>
-</section>
-
-<!-- Services Preview -->
-<section class="py-5 text-center">
-  <div class="container">
-    <h2 class="section-heading mb-4">What We Offer</h2>
-    <div class="row">
-      <div class="col-md-4 mb-4">
-        <div class="stat-box">
-          <div class="service-icon"><i class="fas fa-chart-line"></i></div>
-          <h5>Digital Marketing</h5>
-          <p>Grow your audience and drive conversions through SEO, Ads & more.</p>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-about">
+                <h3>BrainwaysTech LLP</h3>
+                <p>Technology Evolved With AI - Empowering businesses with intelligent solutions and ethical foundations. We deliver innovative digital experiences that drive growth and success.</p>
+                <div class="social-links">
+                    <a href="https://github.com/brainwaystech" target="_blank">💻</a>
+                    <a href="https://linkedin.com/company/brainwaystech" target="_blank">💼</a>
+                    <a href="https://twitter.com/brainwaystech" target="_blank">🐦</a>
+                    <a href="mailto:info@brainwaystechllp.com">📧</a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#projects">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#services">Web Development</a></li>
+                    <li><a href="#services">Mobile Apps</a></li>
+                    <li><a href="#services">Chatbot Development</a></li>
+                    <li><a href="#services">UI/UX Design</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Case Studies</a></li>
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </div>
         </div>
-      </div>
-      <div class="col-md-4 mb-4">
-        <div class="stat-box">
-          <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
-          <h5>Web Development</h5>
-          <p>We build fast, secure and responsive websites tailored to your needs.</p>
+        <div class="footer-bottom">
+            <p>&copy; 2025 BrainwaysTech LLP. All rights reserved. | Privacy Policy | Terms of Service</p>
         </div>
-      </div>
-      <div class="col-md-4 mb-4">
-        <div class="stat-box">
-          <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
-          <h5>App Development</h5>
-          <p>Launch feature-rich mobile applications that scale with your business.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </footer>
 
-<!-- About Preview -->
-<section class="py-5 bg-light text-center">
-  <div class="container">
-    <h2 class="section-heading mb-4">About BrainwaysTech LLP</h2>
-    <p class="mb-4">We are a leading IT solutions provider based in Bangalore, India. With a team of 180+ professionals, we specialize in delivering web, mobile, and digital marketing services that help businesses succeed in the digital era.</p>
-    <a href="about.html" class="btn btn-orange">Learn More</a>
-  </div>
-</section>
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                     // Close mobile menu after clicking
+                    document.getElementById('navMenu').classList.remove('active');
+                    document.getElementById('menuToggle').classList.remove('active');
+                }
+            });
+        });
 
-<!-- Work Process Section -->
-<section class="work-process-section">
-  <div class="container">
-    <h5 class="section-subtitle">Work Process</h5>
-    <h2 class="section-title">4 Steps to <span>Project Development</span></h2>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
 
-    <div class="process-row">
-      <div class="process-step">
-        <div class="step-number">1</div><br>
-        <h3>Planning and Requirement Analysis</h3>
-        <p>We gather detailed requirements, define the project scope, conduct feasibility studies, and align all stakeholders to ensure a clear and unified vision.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-number">2</div><br>
-        <h3>Design and Prototyping</h3>
-        <p>Design robust architecture, develop interactive prototypes, and collect feedback to make refinements and ensure optimal performance.</p>
-      </div>
-    </div>
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
 
-    <div class="process-row">
-      <div class="process-step">
-        <div class="step-number">3</div><br>
-        <h3>Development and Testing</h3>
-        <p>Implement with iterative coding, conduct testing, and provide progress updates for optimal functionality and smooth development.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-number">4</div><br>
-        <h3>Deployment and Support</h3>
-        <p>Thoroughly test, fix bugs, deploy to production, and provide post-deployment support and continuous improvement.</p>
-      </div>
-    </div>
-  </div>
-</section>
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!menuToggle.contains(e.target) && !navMenu.contains(e.target)) {
+                navMenu.classList.remove('active');
+                menuToggle.classList.remove('active');
+            }
+        });
 
-<section class="power-section">
-  <div class="container">
-    <h2>The fire that fuels our <span class="highlight">passion</span></h2>
-    <p class="subtitle">At Brainwaystech LLP, we believe in the power of:</p>
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
 
-    <div class="card-grid">
-      <div class="power-card">
-        <div class="card-content">
-          <div class="card-header">
-            <h3>Creativity</h3>
-            <img src="assets/images/creativity.png" alt="Creativity Icon">
-          </div>
-          <p>We dare to dream big and push boundaries, never settling for the ordinary.</p>
-        </div>
-      </div>
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you within 24 hours.');
+            e.target.reset();
+        });
 
-      <div class="power-card">
-        <div class="card-content">
-          <div class="card-header">
-            <h3>Collaboration</h3>
-            <img src="icon2.png" alt="Collaboration Icon">
-          </div>
-          <p>We thrive on diverse perspectives and believe in the magic of working together.</p>
-        </div>
-      </div>
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
-      <div class="power-card">
-        <div class="card-content">
-          <div class="card-header">
-            <h3>Impact</h3>
-            <img src="icon3.png" alt="Impact Icon">
-          </div>
-          <p>We’re driven by a desire to make a difference, to create brands that move mountains.</p>
-        </div>
-      </div>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
 
-      <div class="power-card">
-        <div class="card-content">
-          <div class="card-header">
-            <h3>Innovation</h3>
-            <img src="icon4.png" alt="Innovation Icon">
-          </div>
-          <p>We stay ahead of the curve, embracing new technologies & trends to keep your brand on top.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+        // Observe all cards
+        document.querySelectorAll('.service-card, .project-card, .value-card, .testimonial-card').forEach(el => {
+            observer.observe(el);
+        });
 
-<!-- Stats -->
-<section class="stats text-center">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-3 mb-4">
-        <div class="stat-box">
-          <h2 class="text-orange">300+</h2>
-          <p>Projects Delivered</p>
-        </div>
-      </div>
-      <div class="col-md-3 mb-4">
-        <div class="stat-box">
-          <h2 class="text-orange">50+</h2>
-          <p>Team Members</p>
-        </div>
-      </div>
-      <div class="col-md-3 mb-4">
-        <div class="stat-box">
-          <h2 class="text-orange">4+</h2>
-          <p>Years of Experience</p>
-        </div>
-      </div>
-      <div class="col-md-3 mb-4">
-        <div class="stat-box">
-          <h2 class="text-orange">98%</h2>
-          <p>Client Satisfaction</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+        // Counter animation for stats
+        const animateCounters = () => {
+            const counters = document.querySelectorAll('.stat-number');
+            counters.forEach(counter => {
+                const target = counter.textContent;
+                const isNumber = !isNaN(target.replace('+', ''));
+                
+                if (isNumber) {
+                    const value = parseInt(target);
+                    let current = 0;
+                    const increment = value / 50;
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= value) {
+                            counter.textContent = target;
+                            clearInterval(timer);
+                        } else {
+                            counter.textContent = Math.floor(current) + '+';
+                        }
+                    }, 30);
+                }
+            });
+        };
 
-<!-- Contact -->
-<section class="bg-light py-5" id="contact">
-  <div class="container">
-    <h2 class="text-center text-orange mb-4">Contact Us</h2>
-    <form onsubmit="return sendToWhatsApp();">
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label>Name</label>
-          <input type="text" id="name" class="form-control" required>
-        </div>
-        <div class="form-group col-md-6">
-          <label>Email</label>
-          <input type="email" id="email" class="form-control" required>
-        </div>
-      </div>
-      <div class="form-group">
-        <label>Service Interested In</label>
-        <select id="service" class="form-control" required>
-          <option value="">-- Select a Service --</option>
-          <option>SEO</option>
-          <option>Social Media Marketing</option>
-          <option>Meta Ads</option>
-          <option>Google Ads</option>
-          <option>Website Development</option>
-          <option>Content Marketing</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Your Message</label>
-        <textarea id="message" rows="4" class="form-control" required></textarea>
-      </div>
-      <button type="submit" class="btn btn-whatsapp btn-block btn-lg">
-        Send via WhatsApp <i class="fab fa-whatsapp ml-1"></i>
-      </button>
-    </form>
-  </div>
-</section>
+        // Trigger counter animation when stats section is visible
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
 
-
-<!-- Footer -->
-<footer>
-  <div class="container">
-    <p>BrainwaysTech LLP | Digital & IT Solutions</p>
-    <p>Email: info@brainwaystechllp.com | Phone: +91-7667924881</p>
-    <div class="social mb-2">
-      <a href="#"><i class="fab fa-facebook"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-linkedin"></i></a>
-    </div>
-    <hr style="background-color: rgba(255,255,255,0.2);">
-    <p class="mb-0 small">&copy; 2025 BrainwaysTech LLP. All rights reserved.</p>
-  </div>
-</footer>
-
-<!-- JS -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
-
-<!-- WhatsApp Form Script -->
-<script>
-  function sendToWhatsApp() {
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const service = document.getElementById("service").value;
-    const message = document.getElementById("message").value.trim();
-
-    const number = "917667924881"; // Replace with your WhatsApp number
-    const msg = `New Inquiry from BrainwaysTech Website\n\n*Name:* ${name}\n*Email:* ${email}\n*Service:* ${service}\n*Message:* ${message}`;
-    window.open(`https://wa.me/${number}?text=${encodeURIComponent(msg)}`, '_blank');
-    return false;
-  }
-</script>
-
+        const statsSection = document.querySelector('.stats');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+    </script>
 </body>
 </html>
